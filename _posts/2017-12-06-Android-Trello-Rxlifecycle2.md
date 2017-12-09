@@ -1,8 +1,8 @@
 ---
 layout:       post
 title:        Android-Trello-Rxlifecycle2
-subtitle:     "要死记, 按步骤做"
-date:         2017-12-05 07:07:07
+subtitle:     "没写完, 待填坑"
+date:         2017-12-06 07:07:07
 author:       "Guang1234567"
 header-img:   "img/post-bg-android.jpg"
 header-mask:  0.3

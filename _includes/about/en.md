@@ -1,35 +1,45 @@
 
 
 > Yet another man.
+> 暂时用中文版的代替先
 
 
-Hi, I am *@huxpro* (Huang, Xuan), a software engineer & a designer. I previously worked as Web Front-End Engineer at [Alibaba Trip](https://www.alitrip.com/); Web Front-End Infrastructure Team Lead at [Wepiao.com](https://www.crunchbase.com/organization/wepiao#/entity); And [Invited Consultant on PWA]((https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509)) at [Ele.me](https://github.com/elemefe/).
+> 写写代码，做做设计，  
+> 离开世界之前，一切都是过程。
 
-I studied Digital Media Art and graduated from [Communication University of China](https://en.wikipedia.org/wiki/Communication_University_of_China) by 2016, and am studying Computer Science at [Rochester Institute of Technology](https://en.wikipedia.org/wiki/Rochester_Institute_of_Technology) from 2017.
+Hey，我是 Guang1234567，病毒种，进化程度不明，多出没于[博客][1]、[游戏: 绝地求生][4] 、 [github][3]等地带，绝招尚在开发中。
 
+**联系方式**
+- lihansey163@163.com
+- github notification or issue
+
+职业是
+- 前 Adobe Flash 软件工程师
+- 前 Android Framework 软件工程师
+- 现 Android APP 软件工程师
+
+一些作品和开源软件项目，👉 戳 [Github](https://github.com/Guang1234567?tab=repositories)。 
+
+**讨厌**
+- 知乎 (一群鸟人找存在感的地方...)
+- 微博 (一群鸟人在扮嘢(装X)的地方...)
+- Google 写的开源库 (自己写的自己内部不用...)
+    
+**喜欢**
+- **讨厌**取反
+
+**特别喜欢**
+- 看美日韩港剧
+- 法国🇫🇷电影
+- NBA
+- 听歌   
 
 ##### Talks
 
-- [Upgrading to Progressive Web Apps][9] · [JSConf China Shanghai 2017](http://2017.jsconf.cn/)
-- Building Progressive Web Apps · [CSDI Guangzhou 2017](http://www.csdisummit.com/)
-- The State of Progressive Web App · GDG IO Redux Beijing 2017
-- PWA Rehashing · Baidu HQ Beijing 2017
-- [Service Worker 101][5] · GDG DevFest Beijing 2016
-- [Progressive Web Apps][4] · QCon Shanghai 2016
-- Progressive Web App in my POV · GDG IO Redux Beijing 2016
-- [CSS Still Sucks 2015][2] · 2015
-- [JavaScript Modularization Journey][1] · 2015
+- [2017 搭建此个人博客][1] · 👉 戳 [源码在这里][2]
 
-
-
-[1]: //huangxuan.me/2015/07/09/js-module-7day/
-[2]: //huangxuan.me/2015/12/28/css-sucks-2015/
-[3]: //huangxuan.me/2016/06/05/pwa-in-my-pov/
-[4]: //huangxuan.me/2016/10/20/pwa-qcon2016/
-[5]: //huangxuan.me/2016/11/20/sw-101-gdgdf/
-[6]: https://yanshuo.io/assets/player/?deck=58ac8598b123db0067292f92 "PWA Rehashing"
-[7]: https://yanshuo.io/assets/player/?deck=593ad6fbfe88c2006a0a0d6d "The State of PWA"
-[8]: https://yanshuo.io/assets/player/?deck=594d673d570c357d0698a950 "Building PWA"
-[9]: //huangxuan.me/jsconfcn2017/
-
+[1]: https://guang1234567.github.io
+[2]: https://github.com/Guang1234567/Guang1234567.github.io
+[3]: https://github.com/Guang1234567?tab=repositories
+[4]: http://www.playbattlegrounds.com/main.pu
 

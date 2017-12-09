@@ -2,7 +2,7 @@
 layout:       post
 title:        Android-Permission
 subtitle:     "要死记, 按步骤做"
-date:         2017-11-14 07:07:07
+date:         2017-12-05 07:07:07
 author:       "Guang1234567"
 header-img:   "img/post-bg-android.jpg"
 header-mask:  0.3

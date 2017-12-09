@@ -1,10 +1,10 @@
 ---
 layout:       post
 title:        Cherry Picking Specific Commits From Another Branch
-subtitle:     "要死记, 按步骤做"
+subtitle:     "git git git git baby baby 😆"
 date:         2017-12-05 07:07:07
 author:       "Guang1234567"
-header-img:   "img/post-bg-android.jpg"
+header-img:   "img/post-bg-git.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
