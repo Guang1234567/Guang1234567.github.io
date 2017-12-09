@@ -1,21 +1,28 @@
 ---
-title: Cherry Picking Specific Commits From Another Branch
-layout: post
-categories: vcs
-tags: git
+layout:       post
+title:        Cherry Picking Specific Commits From Another Branch
+subtitle:     "要死记, 按步骤做"
+date:         2017-12-05 07:07:07
+author:       "Guang1234567"
+header-img:   "img/post-bg-android.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: false
+categories: 
+    - cvs
+    - git
+tags:
+    - git
 ---
 
 > 此文章不允许转载, 违者必究...
 
 > 目的: 如何使用 `git rebase --onto` 命令来将某一分支的某些相连的 Commit 合并到指定的另外一个分支, 避免用 cherry-pick 一个个合并.
 
+**目录:**
 
 * content
 {:toc}
-
-
-
-
 
 ## Why 写这篇文章?
 
@@ -23,7 +30,7 @@ tags: git
 
 对下面栏目的 `git rebase --onto` 到底能用来干什么感到有点疑惑:
 
-![android-permission.svg]({{ site.baseurl }}/post_resource/2017-12-05-Cherry-Picking-Specific-Commits-From-Another-Branch/git-rebase-onto.png)
+![android-permission.svg]({{ site.baseurl }}/img/in-post/2017-12-05-Cherry-Picking-Specific-Commits-From-Another-Branch/git-rebase-onto.png)
 
 
 接下来的某天看到这篇文章

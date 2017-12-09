@@ -1,19 +1,28 @@
 ---
-title: Make GridView or GridLayoutManager items square.
-layout: post
-categories: Android
-tags: Android_UI
+layout:       post
+title:        Make GridView or GridLayoutManager items square
+subtitle:     "要死记, 按步骤做"
+date:         2017-11-14 07:07:07
+author:       "Guang1234567"
+header-img:   "img/post-bg-android.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: false
+categories: 
+    - Android
+tags:
+    - Android_UI
+    - Android
 ---
 
 > 转载至 <https://stackoverflow.com/questions/26566954/square-layout-on-gridlayoutmanager-for-recyclerview>
 
 > 目的: 使 `GridView` or `GridLayoutManager` 的每个 `item` 变成正方形格子
 
+**目录:**
+
 * content
 {:toc}
-
-
-
 
 To have the square elements in my RecyclerView, I provide a simple wrapper for my root View element; I use the following SquareRelativeLayout in place of RelativeLayout.
 
@@ -71,3 +80,4 @@ Then, in my XML layout for the adapter, I've just referenced the custom view as 
 
 
 > Note: Depending on which orientation your grid is, then you may want to have the width based off of height (GridLayoutManager.HORIZONTAL) instead of the height being based off the width (GridLayoutManager.VERTICAL).
+

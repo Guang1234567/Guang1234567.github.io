@@ -1,8 +1,20 @@
 ---
-title: Android-Trello-Rxlifecycle2
-layout: post
-categories: Android Rxjava
-tags: rxlifecycle2 trello rxjava2
+layout:       post
+title:        Android-Trello-Rxlifecycle2
+subtitle:     "要死记, 按步骤做"
+date:         2017-12-05 07:07:07
+author:       "Guang1234567"
+header-img:   "img/post-bg-android.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: false
+categories: 
+    - Android
+tags:
+    - Android
+    - RxAndroid
+    - rxlifecycle
+    - trello
 ---
 
 > 此文章不允许转载, 违者必究...
@@ -14,8 +26,12 @@ tags: rxlifecycle2 trello rxjava2
 >>
 >> 如果你的 Android app 使用 [Rxjava2](https://github.com/ReactiveX/RxJava) 写的, 那么[Rxlifecycle2](https://github.com/trello/RxLifecycle) 库提供了一套 APIs 去帮你简化这些释放资源的操作和统一释放资源的方式.
 
+**目录:**
+
 * content
 {:toc}
+
+
 
 
 

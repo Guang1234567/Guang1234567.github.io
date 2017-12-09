@@ -1,20 +1,28 @@
 ---
-title: 使用 android ndk 去编译官方的sample
-layout: post
-categories: Android
-tags: Android_NDK
+layout:       post
+title:        使用 Android Ndk 去编译官方的sample
+subtitle:     "要死记, 按步骤做"
+date:         2017-11-14 07:07:07
+author:       "Guang1234567"
+header-img:   "img/post-bg-android.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: false
+categories: 
+    - Android
+tags:
+    - Android_NDK
+    - Android
 ---
 
 > 此文章不允许转载, 违者必究...
 
 > 目的: 如何使用 android ndk 去编译官方的 `android_ndk/samples/gles3jni`
 
+**目录:**
+
 * content
 {:toc}
-
-
-
-
 
 ## 开发环境
 * windows7
@@ -79,3 +87,4 @@ Administrator@Guang1234567-Win7 [01:07:26] [/cygdrive/d/dev_kit/android_ndk/samp
 Administrator@Guang1234567-Win7 [01:07:26] [/cygdrive/d/dev_kit/android_ndk/samples/gles3jni/jni]
 -> % ndk-build.cmd APP_BUILD_SCRIPT=./Android-18.mk -B
 ```
+
