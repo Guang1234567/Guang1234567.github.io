@@ -53,7 +53,9 @@ disqus_username: Guang1234567
 # Netease setttings
 netease_comment: false
 
-
+# Support for LiveRe comments system.
+# You can get your uid from https://livere.com/insight/myCode (General web site)
+livere_username: MTAyMC8zMjMwMS84ODYy
 
 # Analytics settings
 # Baidu Analytics 
