@@ -67,7 +67,7 @@ layout: default
                 </select>
                 {% endif %}
 
-				{{ content }}
+                {{ content }}
 
                 <hr style="visibility: hidden;">
 
@@ -103,6 +103,29 @@ layout: default
                 <!-- 网易云跟帖 评论框 start -->
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
                 <!-- 网易云跟帖 评论框 end -->
+                {% endif %}
+                
+                {% if site.livere_username %}
+                <!-- 来必力City版 评论框 start -->
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="{{site.livere_username}}">
+                    <script type="text/javascript">
+                   (function(d, s) {
+                       var j, e = d.getElementsByTagName(s)[0];
+
+                       if (typeof LivereTower === 'function') { return; }
+
+                       j = d.createElement(s);
+                       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                       j.async = true;
+
+                       e.parentNode.insertBefore(j, e);
+                   })(document, 'script');
+                    </script>
+                <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+                <!-- 来必力City版 评论框 end -->
                 {% endif %}
             </div>  
 
@@ -176,40 +199,6 @@ layout: default
   Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
 </script>
 <!-- 网易云跟帖JS代码 end -->
-{% endif %}
-
-
-{% if site.livere_usernam %}
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="{{site.livere_username}}">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-{% endif %}
-
-{% if site.livere_username %}
-<!-- 来必力City版安装代码 -->
-<script type="text/javascript">
-    (function() {
-        var livere = document.createElement('script'); livere.type = 'text/javascript'; livere.async = true;
-        livere.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(livere);
-    })();
-</script>
-<!-- City版安装代码已完成 -->
 {% endif %}
 
 
