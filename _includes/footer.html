@@ -336,3 +336,17 @@
 <script src="{{ "/jekyll-search/search/js/bootstrap3-typeahead.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/jekyll-search/search/js/cb-search.js" | prepend: site.baseurl }}"></script>
 <!-- jekyll-search-plugin End-->
+
+
+<!-- thickbox 图片插件 -->
+<script type="text/javascript" src="{{ "/thickbox/thickbox.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript">
+    (function(){
+        $("article img").each(function(index,value){
+
+            var aDom=$("<a></a>").attr({"href":$(value).attr("src")+"?inlineId=myOnPageContent"}).addClass("thickbox");
+            $(value).wrap(aDom);
+
+        });
+    })();
+</script>
