@@ -255,3 +255,25 @@ layout: default
     }
 </style>
 {% endif %}
+
+
+<script type="text/javascript" src="{{ "/tctip/dist/tctip-1.0.3.js " | prepend: site.baseurl }}"></script>
+<script>
+  new tctip({
+    top: '20%',
+    button: {
+      id: 9,
+      type: 'dashang'
+    },
+    list: [
+      {
+        type: 'wechat',
+        qrImg: "{{ '/tctip/demo/images/wechat.jpg' | prepend: site.baseurl }}"
+      },
+      {
+        type: 'alipay',
+        qrImg: "{{ '/tctip/demo/images/alipay.jpg' | prepend: site.baseurl }}"
+      }
+    ]
+  }).init()
+</script>

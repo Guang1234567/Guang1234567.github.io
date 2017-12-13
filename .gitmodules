@@ -1,3 +1,6 @@
 [submodule "jekyll-search"]
 	path = jekyll-search
 	url = https://github.com/Guang1234567/jekyll-search.git
+[submodule "tctip"]
+	path = tctip
+	url = https://github.com/Guang1234567/tctip.git
