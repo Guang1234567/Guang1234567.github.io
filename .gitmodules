@@ -1,0 +1,3 @@
+[submodule "jekyll-search"]
+	path = jekyll-search
+	url = https://github.com/Guang1234567/jekyll-search.git
