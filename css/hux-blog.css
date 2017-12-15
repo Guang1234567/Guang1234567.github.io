@@ -89,7 +89,7 @@
 }
 .side-catalog .catalog-body li a {
   padding-left: 10px;
-  max-width: 350px;
+  max-width: 360px;
   display: inline-block;
   vertical-align: middle;
   height: 30px;
@@ -125,7 +125,7 @@
 .side-catalog .catalog-body .h4_nav a,
 .side-catalog .catalog-body .h5_nav a,
 .side-catalog .catalog-body .h6_nav a {
-  max-width: 375px;
+  max-width: 350px;
 }
 .side-catalog .catalog-body .active {
   border-radius: 4px;

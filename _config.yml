@@ -62,6 +62,9 @@ kramdown:
       start_line: 1
 
 
+# Connect to a locally built Jekyll Server using mobile devices in the LAN
+# https://stackoverflow.com/questions/16608466/connect-to-a-locally-built-jekyll-server-using-mobile-devices-in-the-lan
+host: 0.0.0.0
 
 # Disqus settings
 disqus_username: Guang1234567
