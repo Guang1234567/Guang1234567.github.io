@@ -4,3 +4,6 @@
 [submodule "tctip"]
 	path = tctip
 	url = https://github.com/Guang1234567/tctip.git
+[submodule "lightbox"]
+	path = lightbox
+	url = https://github.com/Guang1234567/lightbox

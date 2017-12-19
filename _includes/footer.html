@@ -339,6 +339,7 @@
 
 
 <!-- thickbox 图片插件 -->
+<!--
 <script type="text/javascript" src="{{ "/thickbox/thickbox.js" | prepend: site.baseurl }}"></script>
 <script type="text/javascript">
     (function(){
@@ -349,4 +350,23 @@
 
         });
     })();
+</script>
+-->
+
+<!-- lightbox 图片插件 -->
+<script type="text/javascript" src="{{ "/lightbox/dist/ekko-lightbox.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript">
+    (function(){
+        $("article img").each(function(index,value){
+
+            var aDom=$("<a></a>").attr({"href":$(value).attr("src")+"?inlineId=myOnPageContent"}).addClass("ekko-lightbox");
+            $(value).wrap(aDom);
+
+        });
+    })();
+    
+    $(document).on('click', '[class="ekko-lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
 </script>
