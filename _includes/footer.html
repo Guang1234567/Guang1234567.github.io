@@ -371,9 +371,26 @@
     headerNumber('post-content');
     initReadingProgressBar();
     
-    /*$(document).ready(function(){
-      
-    });*/
+    $(document).ready(function(){
+      	arrMusicID = [33469292,32648543,28287132,26511034,435305771,27588029,41462985,28656150,4010799];  //musicID array
+		musicID = Math.floor(Math.random()*(arrMusicID.length)); //get a ran num as index
+		$('body').css('height',document.documentElement.clientHeight -5);
+
+		if (!Number.isInteger(arrMusicID[musicID])) return; // load failed, bye~
+
+		var iframe = document.createElement('iframe');
+		iframe.id="bgm";
+		iframe.style = "border: 0px;";
+		iframe.src = '//music.163.com/outchain/player?type=2&id=' +arrMusicID[musicID]+ '&auto=1&height=66';
+		console.log(iframe.src)
+		iframe.frameborder="no";
+		iframe.marginwidth="0";
+		iframe.marginheight="0";
+		iframe.width=330;
+		iframe.height=86;
+		iframe.align="bottom"
+		document.body.appendChild(iframe);
+    });
 </script>
 
 <!-- Side Catalog -->
