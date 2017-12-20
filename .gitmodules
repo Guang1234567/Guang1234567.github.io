@@ -7,6 +7,3 @@
 [submodule "lightbox"]
 	path = lightbox
 	url = https://github.com/Guang1234567/lightbox
-[submodule "syntaxhighlighter"]
-	path = syntaxhighlighter
-	url = https://github.com/Guang1234567/syntaxhighlighter.git
