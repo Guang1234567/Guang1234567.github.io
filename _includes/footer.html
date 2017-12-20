@@ -202,68 +202,6 @@
 {% endif %}
 
 
-<!-- Side Catalog -->
-{% if page.catalog %}
-<script type="text/javascript">
-    function generateCatalog (selector) {
-
-        // interop with multilangual 
-        if ({{ page.multilingual }}) {
-            _containerSelector = 'div.post-container.active'
-        } else {
-            _containerSelector = 'div.post-container'
-        }
-
-        // init
-        var P = $(_containerSelector),a,n,t,l,i,c;
-        a = P.find('h1,h2,h3,h4,h5,h6');
-
-        // clean
-        $(selector).html('')
-
-        // appending
-        a.each(function () {
-            n = $(this).prop('tagName').toLowerCase();
-            i = "#"+$(this).prop('id');
-            t = $(this).text();
-            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
-            l = $('<li class="'+n+'_nav"></li>').append(c);
-            $(selector).append(l);
-        });
-        return true;
-    }
-
-    generateCatalog(".catalog-body");
-
-    // toggle side catalog
-    $(".catalog-toggle").click((function(e){
-        e.preventDefault();
-        $('.side-catalog').toggleClass("fold")
-    }))
-
-    /*
-     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
-     * Fork by Hux to support padding
-     */
-    async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
-        $('.catalog-body').onePageNav({
-            currentClass: "active",
-            changeHash: !1,
-            easing: "swing",
-            filter: "",
-            scrollSpeed: 700,
-            scrollOffset: 0,
-            scrollThreshold: .2,
-            begin: null,
-            end: null,
-            scrollChange: null,
-            padding: 80
-        });
-    });
-</script>
-{% endif %}
-
-
 <!-- Multi-Lingual -->
 {% if page.multilingual %}
 <!-- Handle Language Change -->
@@ -387,8 +325,111 @@
 <script type="text/javascript" src="{{ "/syntaxhighlighter_3_0_83/scripts/shBrushDiff.js" | prepend: site.baseurl }}"></script>
 
 <script type="text/javascript">
-    SyntaxHighlighter.defaults['gutter']=false;//默认隐藏行号
+    SyntaxHighlighter.defaults['gutter']=true;//默认显示行号
     SyntaxHighlighter.defaults['toolbar']=false;//隐藏问号按钮
     SyntaxHighlighter.config.space=' ';//消除Chrome复制时的空白BUG
     SyntaxHighlighter.all()
 </script>
+
+<script type="text/javascript" src="{{ "/nanobar/nanobar.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript">
+    /**
+     *  阅读进度条
+     */
+    function initReadingProgressBar() {
+        var options = {
+            classname: 'nanobar-class',
+            id: 'nanobar-id',
+            target: document.getElementById('nanobarDivId')
+        };
+
+        var nanobar = new Nanobar( options );
+        $(window).bind('scroll', function() {
+            var percent = $(window).scrollTop()/($('body').height()-$(window).height())
+            nanobar.go( percent*100 );
+        });
+    }
+    
+    /**
+     *  自动按顺序给标题添加序号
+     */
+    function headerNumber(postContentDivID) {
+        var headerIndex = [0,0];  /*for h2,h3*/
+        $('#'+postContentDivID).find('h2:not(blockquote h2),h3:not(blockquote h3)').each(function(index, el) {
+            if ($(el).is('H2')) {
+                $(el).text( (++headerIndex[0])+'. '+$(el).text());
+                headerIndex[1]=0;
+            }else if ($(el).is('H3')) {
+                $(el).text( headerIndex[0]+'.'+ (++headerIndex[1])+'. '+$(el).text());
+            }
+        });
+    }
+    
+    headerNumber('post-content');
+    initReadingProgressBar();
+    
+    /*$(document).ready(function(){
+      
+    });*/
+</script>
+
+<!-- Side Catalog -->
+{% if page.catalog %}
+<script type="text/javascript">
+    function generateCatalog (selector) {
+
+        // interop with multilangual 
+        if ({{ page.multilingual }}) {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+{% endif %}
