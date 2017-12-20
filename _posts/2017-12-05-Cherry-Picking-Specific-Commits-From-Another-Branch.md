@@ -64,10 +64,12 @@ tags:
 
 #### STEP 1)
 
-```
+<script type="syntaxhighlighter" class="brush: bash; gutter: true; ruler: true; first-line: 1; highlight: [2]"><![CDATA[
+
 Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_dev_产品B *]
 -> % git checkout -b "branch_one_Million" b886a0
-```
+
+]]></script>
 
 此时 git 仓库是这样的:
 
@@ -87,10 +89,12 @@ Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_dev_产品B *]
 
 #### STEP 2)
 
-```
+<script type="syntaxhighlighter" class="brush: bash; gutter: true; ruler: true; first-line: 1; highlight: [2]"><![CDATA[
+
 Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_one_Million *]
 -> % git rebase --onto master 76cada^  
-```
+
+]]></script>
 
 此时 git 仓库是这样的:
 
@@ -108,15 +112,16 @@ Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_one_Million *]
 
 #### STEP 3)
 
-```
+<script type="syntaxhighlighter" class="brush: bash; gutter: true; ruler: true; first-line: 1; highlight: [2,6]"><![CDATA[
+
 Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_one_Million *]
 -> % git checkout branch_dev_产品A
-```
 
-```
+
 Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_dev_产品A *]
 -> % git merge branch_one_Million
-```
+
+]]></script>
 
 此时 git 仓库是这样的:
 
@@ -134,9 +139,11 @@ Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_dev_产品A *]
                                         [branch_dev_产品B]
 ```
 
-```
+<script type="syntaxhighlighter" class="brush: bash; gutter: true; ruler: true; first-line: 1; highlight: [3]"><![CDATA[
+
 // branch_one_Million 完成任务, 删掉
 Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_dev_产品A *]
 -> % git branch -d branch_one_Million
-```
+
+]]></script>
 

@@ -16,6 +16,12 @@
  */
 .syntaxhighlighter {
   background-color: #1b2426 !important;
+  width: 100% !important;
+  margin: 1em 0 1em 0 !important;
+  position: relative !important;
+  overflow: auto !important;
+  font-size: 1em !important;
+  padding: 1px;
 }
 .syntaxhighlighter .line.alt1 {
   background-color: #1b2426 !important;

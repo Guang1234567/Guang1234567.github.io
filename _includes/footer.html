@@ -387,5 +387,8 @@
 <script type="text/javascript" src="{{ "/syntaxhighlighter_3_0_83/scripts/shBrushDiff.js" | prepend: site.baseurl }}"></script>
 
 <script type="text/javascript">
-     SyntaxHighlighter.all()
+    SyntaxHighlighter.defaults['gutter']=false;//默认隐藏行号
+    SyntaxHighlighter.defaults['toolbar']=false;//隐藏问号按钮
+    SyntaxHighlighter.config.space=' ';//消除Chrome复制时的空白BUG
+    SyntaxHighlighter.all()
 </script>
