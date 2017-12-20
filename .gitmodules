@@ -7,3 +7,6 @@
 [submodule "lightbox"]
 	path = lightbox
 	url = https://github.com/Guang1234567/lightbox
+[submodule "third_part/syntaxhighlighter.git"]
+	path = third_part/syntaxhighlighter.git
+	url = https://github.com/Guang1234567/syntaxhighlighter.git
