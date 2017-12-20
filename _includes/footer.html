@@ -354,13 +354,16 @@
      *  自动按顺序给标题添加序号
      */
     function headerNumber(postContentDivID) {
-        var headerIndex = [0,0];  /*for h2,h3*/
-        $('#'+postContentDivID).find('h2:not(blockquote h2),h3:not(blockquote h3)').each(function(index, el) {
+        var headerIndex = [0,0,0];  /*for h2,h3,h4*/
+        $('#'+postContentDivID).find('h2:not(blockquote h2),h3:not(blockquote h3),h4:not(blockquote h4)').each(function(index, el) {
             if ($(el).is('H2')) {
                 $(el).text( (++headerIndex[0])+'. '+$(el).text());
                 headerIndex[1]=0;
             }else if ($(el).is('H3')) {
                 $(el).text( headerIndex[0]+'.'+ (++headerIndex[1])+'. '+$(el).text());
+                headerIndex[2]=0;
+            }else if ($(el).is('H4')) {
+                $(el).text( headerIndex[0]+'.'+ headerIndex[1] +'.'+ (++headerIndex[2])+'. '+$(el).text());
             }
         });
     }
