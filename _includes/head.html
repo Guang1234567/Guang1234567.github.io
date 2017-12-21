@@ -53,9 +53,12 @@
     <!-- lightbox 图片插件 -->
     <link rel="stylesheet" href="{{ "/lightbox/dist/ekko-lightbox.css" | prepend: site.baseurl }}" type="text/css" media="screen" />
     
-    <!-- SyntaxHighlighter 代码语法高亮插件 -->
+    <!-- SyntaxHighlighter 代码语法高亮插件, 需要行号的时候用-->
     <link rel="stylesheet" href="{{ "/syntaxhighlighter_3_0_83/styles/shCoreFadeToGrey.css" | prepend: site.baseurl }}" type="text/css" />
     <link rel="stylesheet" href="{{ "/syntaxhighlighter_3_0_83/styles/shThemeFadeToGrey.css" | prepend: site.baseurl }}" type="text/css" />
+    
+    <!-- highlight.js 代码语法高亮插件, 不需要行号的时候用 -->
+    <link rel="stylesheet" href="{{ "/highlight.js/styles/androidstudio_with_line_numbers.css" | prepend: site.baseurl }}" type="text/css" />
     
     <!-- 阅读进度条 CSS -->
     <link rel="stylesheet" href="{{ "/css/reading_progress.css" | prepend: site.baseurl }}">

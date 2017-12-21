@@ -13,3 +13,9 @@
 [submodule "nanobar"]
 	path = nanobar
 	url = https://github.com/jacoborus/nanobar.git
+[submodule "third_part/highlight.js.git"]
+	path = third_part/highlight.js.git
+	url = https://github.com/Guang1234567/highlight.js.git
+[submodule "third_part/highlightjs-line-numbers.js.git"]
+	path = third_part/highlightjs-line-numbers.js.git
+	url = https://github.com/Guang1234567/highlightjs-line-numbers.js.git

@@ -309,6 +309,19 @@
             });
 </script>
 
+<!-- highlight.js 代码语法高亮插件 -->
+<script type="text/javascript" src="{{ "/highlight.js/highlight.pack.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/highlight.js/highlightjs-line-numbers.min.js" | prepend: site.baseurl }}"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+          hljs.lineNumbersBlock(block);
+        });
+    });
+</script>
+
 <!-- SyntaxHighlighter 代码语法高亮插件 -->
 <script type="text/javascript" src="{{ "/syntaxhighlighter_3_0_83/scripts/shCore.js" | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="{{ "/syntaxhighlighter_3_0_83/scripts/shBrushJava.js" | prepend: site.baseurl }}"></script>
