@@ -395,13 +395,16 @@
      */
     function initBGM() {
         arrMusicID = [33469292,32648543,28287132,26511034,435305771,27588029,41462985,28656150,4010799];  //musicID array
+        //console.log({{ page.music-ids }});
+        {% if page.music-ids %}
+        arrMusicID = {{ page.music-ids }};
+        {% endif %}
         musicID = Math.floor(Math.random()*(arrMusicID.length)); //get a ran num as index
         //$('body').css('height',document.documentElement.clientHeight);
 
         if (!Number.isInteger(arrMusicID[musicID])) return; // load failed, bye~
 
-        
-var iframeContainer = document.createElement('div');
+        var iframeContainer = document.createElement('div');
         iframeContainer.id="bgmContainer";
         iframeContainer.className="tweenbox";
         iframeContainer.style = "top: 100px; left: 10px; width: 330px; height: 100px"
@@ -443,7 +446,10 @@ var iframeContainer = document.createElement('div');
     
     $(document).ready(function(){
         initReadingProgressBar();
+
+        {% if page.music-enable %}
         initBGM();
+        {% endif %}
     });
 </script>
 

@@ -4,10 +4,11 @@ title:        "文章标题"
 subtitle:     "文章子标题"
 date:         2017-12-11 00:00:00
 author:       "Guang1234567"
-header-img:   "img/post-bg-o.jpg"
+header-img:   "img/home-bg-o.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
+music-enable: true
 categories: 
     - 
     - 
