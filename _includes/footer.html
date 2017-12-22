@@ -255,6 +255,10 @@
 {% endif %}
 
 
+<!-- js 动画库 -->
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"> </script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js"> </script>
+
 <!-- jekyll-search-plugin Start-->
 <div class="cb-search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
       opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
@@ -396,9 +400,15 @@
 
         if (!Number.isInteger(arrMusicID[musicID])) return; // load failed, bye~
 
+        
+var iframeContainer = document.createElement('div');
+        iframeContainer.id="bgmContainer";
+        iframeContainer.className="tweenbox";
+        iframeContainer.style = "top: 100px; left: 10px; width: 330px; height: 100px"
+
         var iframe = document.createElement('iframe');
         iframe.id="bgm";
-        iframe.style = "border: 0px;";
+        iframe.style = "border: 0px; margin:7px 0;";
         iframe.src = '//music.163.com/outchain/player?type=2&id=' +arrMusicID[musicID]+ '&auto=1&height=66';
         console.log(iframe.src)
         iframe.frameborder="no";
@@ -406,8 +416,27 @@
         iframe.marginheight="0";
         iframe.width=330;
         iframe.height=86;
-        iframe.align="bottom"
-        document.body.appendChild(iframe);
+        
+        iframeContainer.appendChild(iframe);
+        document.body.appendChild(iframeContainer);
+        
+        var gridWidth = 330;
+        var gridHeight = 100;
+        Draggable.create(".tweenbox", {
+            type:"x,y",
+            edgeResistance:0.65,
+            bounds:document.body,
+            throwProps:true,
+            snap: {
+                x: function(endValue) {
+                    return Math.round(endValue / gridWidth) * gridWidth;
+                },
+                y: function(endValue) {
+                    return Math.round(endValue / gridHeight) * gridHeight;
+                }
+            }
+        });
+
     }
     
     headerNumber('post-content');
