@@ -380,23 +380,6 @@
         });
     }
     
-    /**
-     *  自动按顺序给标题添加序号
-     */
-    function headerNumber(postContentDivID) {
-        var headerIndex = [0,0,0];  /*for h2,h3,h4*/
-        $('#'+postContentDivID).find('h2:not(blockquote h2),h3:not(blockquote h3),h4:not(blockquote h4)').each(function(index, el) {
-            if ($(el).is('H2')) {
-                $(el).text( (++headerIndex[0])+'. '+$(el).text());
-                headerIndex[1]=0;
-            }else if ($(el).is('H3')) {
-                $(el).text( headerIndex[0]+'.'+ (++headerIndex[1])+'. '+$(el).text());
-                headerIndex[2]=0;
-            }else if ($(el).is('H4')) {
-                $(el).text( headerIndex[0]+'.'+ headerIndex[1] +'.'+ (++headerIndex[2])+'. '+$(el).text());
-            }
-        });
-    }
     
     /**
      *  添加 背景音乐
@@ -450,8 +433,6 @@
 
     }
     
-    headerNumber('post-content');
-    
     $(document).ready(function(){
         initReadingProgressBar();
 
@@ -461,19 +442,6 @@
     });
 </script>
 
-{% if site.anchorjs %}
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
-<script>
-    anchors.options = {
-        placement: 'right',
-        visible: 'always',
-        icon: ''
-    };
-    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-</script>
-{% endif %}
 
 <!-- Side Catalog -->
 {% if page.catalog %}
@@ -506,31 +474,33 @@
         return true;
     }
 
-    generateCatalog(".catalog-body");
+    $(document).ready(function(){
+        generateCatalog(".catalog-body");
 
-    // toggle side catalog
-    $(".catalog-toggle").click((function(e){
-        e.preventDefault();
-        $('.side-catalog').toggleClass("fold")
-    }))
+        // toggle side catalog
+        $(".catalog-toggle").click((function(e){
+            e.preventDefault();
+            $('.side-catalog').toggleClass("fold")
+        }))
 
-    /*
-     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
-     * Fork by Hux to support padding
-     */
-    async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
-        $('.catalog-body').onePageNav({
-            currentClass: "active",
-            changeHash: !1,
-            easing: "swing",
-            filter: "",
-            scrollSpeed: 700,
-            scrollOffset: 0,
-            scrollThreshold: .2,
-            begin: null,
-            end: null,
-            scrollChange: null,
-            padding: 80
+        /*
+         * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+         * Fork by Hux to support padding
+         */
+        async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
+            $('.catalog-body').onePageNav({
+                currentClass: "active",
+                changeHash: !1,
+                easing: "swing",
+                filter: "",
+                scrollSpeed: 700,
+                scrollOffset: 0,
+                scrollThreshold: .2,
+                begin: null,
+                end: null,
+                scrollChange: null,
+                padding: 80
+            });
         });
     });
 </script>
