@@ -461,6 +461,20 @@
     });
 </script>
 
+{% if site.anchorjs %}
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
+<script>
+    anchors.options = {
+        placement: 'right',
+        visible: 'always',
+        icon: ''
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+</script>
+{% endif %}
+
 <!-- Side Catalog -->
 {% if page.catalog %}
 <script type="text/javascript">
