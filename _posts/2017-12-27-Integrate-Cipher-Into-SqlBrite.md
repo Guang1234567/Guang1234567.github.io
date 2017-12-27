@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "Android Cipher SQLite API based on SqlBrite"
+title:        "Android Cipher SQLite API Based On SqlBrite"
 subtitle:     "基于 SqlBrite 添加支持加密的 API"
 date:         2017-12-27 00:00:00
 author:       "Guang1234567"
