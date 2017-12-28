@@ -26,7 +26,7 @@ twitter_username:   lihansey
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md","third_part"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md","third_part","lightbox/README.md","jekyll-search/README.md","tctip/README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 

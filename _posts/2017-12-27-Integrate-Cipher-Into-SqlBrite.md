@@ -32,7 +32,7 @@ tags:
 > `android.arch.persistence:db:1.0.0` 是一套 `android api for sqlite`,
 > 目的是提供一套规范化的接口来隐藏各个厂商的 `Sqlite实现` 的具体细节, 从而降低开发者在持久化层投入的成本.
 > 
-> 下面我将要基于 `android.arch.persistence:db:1.0.0` 将 [android-database-sqlcipher][] 和 [wcdb][] 这两个拥有`加密` 特性的 `Sqlite实现` 集成到 [square/sqlbrite].
+> 下面我将要基于 `android.arch.persistence:db:1.0.0` 这个规范化的接口将 [android-database-sqlcipher][] 和 [wcdb][] 这两个拥有`加密` 特性的 `Sqlite实现` 集成到 [square/sqlbrite].
 
 **目录:**
 
@@ -42,7 +42,7 @@ tags:
 
 ## Github 项目
 
-[Guang1234567/sqlbrite][] <i class="fa fa-hand-o-left fa-lg"></i>
+[[Guang1234567/sqlbrite][]] <i class="fa fa-hand-o-left fa-lg"></i> 集成 [android-database-sqlcipher][] 和 [wcdb][] 后的项目.
 
 **USAGE**
 
@@ -158,7 +158,7 @@ public final class DbModule {
 
 参照 `android.arch.persistence:db-framework:1.0.0` 的源码（照葫芦画瓢...）
 
-`android.arch.persistence:db-framework:1.0.0` 是 google 基于 `android.arch.persistence:db:1.0.0` 封装 `package android.database.*` 下面所有类的一个 Android Library. 
+`android.arch.persistence:db-framework:1.0.0` 是 google 基于 `android.arch.persistence:db:1.0.0` 这个规范化接口, 把 `package android.database.*` 这个包下的`Android 官方 sqlite 实现` 按照规范化接口进行封装的类库.
 
 
 ## 集成 android-database-sqlcipher
@@ -202,7 +202,7 @@ public class SqlcipherSQLiteDatabase{
 
 ## 集成 wcdb
 
-跟 [集成 android-database-sqlcipher](#集成-android-database-sqlcipher) 差不多, 只不过包名要替换成 `com.tencent.wcdb.database.`
+跟 [# 集成 android-database-sqlcipher](#集成-android-database-sqlcipher) 差不多, 只不过包名要替换成 `com.tencent.wcdb.database.`
 
 
 [square/sqlbrite]: https://github.com/square/sqlbrite
