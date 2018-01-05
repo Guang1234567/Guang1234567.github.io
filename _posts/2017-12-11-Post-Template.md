@@ -9,17 +9,17 @@ header-mask:  0.3
 catalog:      true
 multilingual: false
 music-enable: true
-categories: 
-    - 
-    - 
+categories:
+    -
+    -
 tags:
-    - 
+    -
 ---
 
 
 > 此文章不允许转载, 违者必究...
 
-> 目的: 
+> 目的:
 
 **目录:**
 

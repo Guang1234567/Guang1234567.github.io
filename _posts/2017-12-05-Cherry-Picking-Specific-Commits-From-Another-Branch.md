@@ -8,7 +8,7 @@ header-img:   "img/post-bg-git.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
-categories: 
+categories:
     - cvs
     - git
 tags:
@@ -60,7 +60,7 @@ tags:
 >注:  `b1 功能` 由 `76cada - 62ecb3 - b886a0` 这 3 个 commit 组成.
 
 
-### 步骤: 
+### 步骤:
 
 #### STEP 1)
 
@@ -74,17 +74,17 @@ Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_dev_产品B *]
 此时 git 仓库是这样的:
 
 ```
-                                         [branch_dev_产品A]        
+                                         [branch_dev_产品A]
                                               |
                                               ↓
-  ... - dd2e86 - 946992 -9143a9 - a6fd86 - 5a6057  
+  ... - dd2e86 - 946992 -9143a9 - a6fd86 - 5a6057
                 \
                 76cada - 62ecb3 - b886a0 - 977f6f02
                                     ↑        ↑
                                     |        |
                                     |    [branch_dev_产品B]
                                     |
-                        [branch_one_Million]   
+                        [branch_one_Million]
 ```
 
 #### STEP 2)
@@ -92,7 +92,7 @@ Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_dev_产品B *]
 <script type="syntaxhighlighter" class="brush: bash; gutter: true; ruler: true; first-line: 1; highlight: [2]"><![CDATA[
 
 Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_one_Million *]
--> % git rebase --onto master 76cada^  
+-> % git rebase --onto master 76cada^
 
 ]]></script>
 
@@ -102,7 +102,7 @@ Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_one_Million *]
                                     [branch_dev_产品A]       [branch_one_Million]
                                               |                           |
                                               ↓                           ↓
-  ... - dd2e86 - 946992 -9143a9 - a6fd86 - 5a6057 - 76cada' - 62ecb3' - b886a0'   
+  ... - dd2e86 - 946992 -9143a9 - a6fd86 - 5a6057 - 76cada' - 62ecb3' - b886a0'
                 \
                 76cada - 62ecb3 - b886a0 - 977f6f02
                                               ↑
@@ -131,7 +131,7 @@ Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_dev_产品A *]
                                                                  [branch_one_Million]
                                                                           |
                                                                           ↓
-  ... - dd2e86 - 946992 -9143a9 - a6fd86 - 5a6057 - 76cada' - 62ecb3' - b886a0'                
+  ... - dd2e86 - 946992 -9143a9 - a6fd86 - 5a6057 - 76cada' - 62ecb3' - b886a0'
                 \
                 76cada - 62ecb3 - b886a0 - 977f6f02
                                               ↑

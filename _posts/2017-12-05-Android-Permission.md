@@ -8,7 +8,7 @@ header-img:   "img/post-bg-android.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
-categories: 
+categories:
     - Android
 tags:
     - Android_Permission
@@ -17,7 +17,7 @@ tags:
 
 > 此文章不允许转载, 违者必究...
 
-> 目的:  告诉大家一个事实: 
+> 目的:  告诉大家一个事实:
 >在Android团队只有小猫小狗两三只的情况, 就不要花费大力气去兼容各种机型 Android Permission.
 >
 >除非加工资,  ^_^

@@ -8,7 +8,7 @@ header-img:   "img/post-bg-android.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
-categories: 
+categories:
     - Android
 tags:
     - Android_UI

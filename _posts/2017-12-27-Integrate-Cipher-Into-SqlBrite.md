@@ -26,12 +26,12 @@ tags:
 
 > 此文章不允许转载, 违者必究...
 
-> 最近  <i class="fa fa-github fa-lg"></i> [square/sqlbrite] 出 `3.x` 版本. 
+> 最近  <i class="fa fa-github fa-lg"></i> [square/sqlbrite] 出 `3.x` 版本.
 > 该版本基于 google 官方的 `android.arch.persistence:db:1.0.0` 重写了 API.
-> 
+>
 > `android.arch.persistence:db:1.0.0` 是一套 `android api for sqlite`,
 > 目的是提供一套规范化的接口来隐藏各个厂商的 `Sqlite实现` 的具体细节, 从而降低开发者在持久化层投入的成本.
-> 
+>
 > 下面我将要基于 `android.arch.persistence:db:1.0.0` 这个规范化的接口将 [android-database-sqlcipher][] 和 [wcdb][] 这两个拥有`加密` 特性的 `Sqlite实现` 集成到 [square/sqlbrite].
 
 **目录:**
@@ -154,6 +154,7 @@ public final class DbModule {
 }
 
 </code></pre>
+
 ## 如何集成?
 
 参照 `android.arch.persistence:db-framework:1.0.0` 的源码（照葫芦画瓢...）
@@ -169,7 +170,7 @@ public final class DbModule {
 
 ### Step 2
 
-将包名 `android.database.` 替换成 `net.sqlcipher.database.` 
+将包名 `android.database.` 替换成 `net.sqlcipher.database.`
 
 ### Step 3
 
@@ -180,16 +181,16 @@ public final class DbModule {
 package android.arch.persistence.db.sqlcipher;
 
 public class SqlcipherSQLiteDatabase{
-    
+
     // ...
-    
+
     @Override
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public Cursor query(final SupportSQLiteQuery supportQuery,
                         CancellationSignal cancellationSignal) {
         throw new UnsupportedOperationException(); // <-- android-database-sqlcipher 没有这个接口...
     }
-    
+
     // ...
 }
 

@@ -8,7 +8,7 @@ header-img:   "img/post-bg-git.jpg"
 header-mask:  0.3
 catalog:      true
 multilingual: false
-categories: 
+categories:
     - cvs
     - git
 tags:
@@ -60,7 +60,7 @@ Linus 发音视频: https://www.youtube.com/watch?v=4XpnKHJAok8
 
 ## 总结
     如果你喜欢做基佬, 那你就发"基特", 开个玩笑!
-    
+
     另外,国内的人还特喜欢读 `[dʒɪt]`,  我倒是无所谓, 关键你别一副 'git' 的态度呀,  对于这种人我是深感厌恶的, 心里会骂它基佬( ‵o′)凸
 
 
