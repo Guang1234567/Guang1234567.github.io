@@ -92,9 +92,15 @@ Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_dev_产品B *]
 <script type="syntaxhighlighter" class="brush: bash; gutter: true; ruler: true; first-line: 1; highlight: [2]"><![CDATA[
 
 Administrator@Guang123456-PC [12:19:35] [/d/my_blog] [branch_one_Million *]
--> % git rebase --onto master 76cada^
+-> % git rebase --onto branch_dev_产品A 76cada^
 
 ]]></script>
+
+> **解析**
+>
+> `git rebase --onto branch_dev_产品A 76cada^` 的作用是:
+>
+> 把当前分支 `branch_one_Million` 中的  `(76cada^, b886a0]`  截取出来, 然后 rebase --onto 到 `branch_dev_产品A`
 
 此时 git 仓库是这样的:
 

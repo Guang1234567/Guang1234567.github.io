@@ -20,7 +20,7 @@ tags:
 
 > 此文章不允许转载, 违者必究...
 
-> 目的: 如何写 SQL 语句把 Wechat 的`最近会话`数据从数据库加载出来.
+> 目的: 如何写 SQL 语句把 Wechat 的 `最近会话` 数据从数据库加载出来.
 
 **目录:**
 
@@ -30,7 +30,7 @@ tags:
 
 ## 加载下面截图所需的数据
 
-> 补充一点: 下面的`最近会话`需要按最后一条消息的时间排序.
+> 补充一点: 下面的 `最近会话` 需要按最后一条消息的时间排序.
 
 ![截图]({{ site.baseurl }}/img/in-post/2018-01-04-Post-SQL-Wechat/timg.jpg)
 
@@ -108,7 +108,7 @@ ORDER BY
 
 **讲解**
 
-1 先连接查询所有最近会话的消息
+1 先连接查询所有最近会话的消息, 另外 sqlite3 的 `JOIN` 其实是 `INNER JOIN`, 可以加个 `LEFT` 在前面比较一下查询结果
 
 <pre class="line-numbers" data-start="8" data-line=""><code class="language-sql">
 
