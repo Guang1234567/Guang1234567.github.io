@@ -164,9 +164,11 @@ dependencies {
 
 ## 仍需解决的问题
 
-> 配置所需的参数怎么传递到 `debug-db`?
+### 问题一: 配置所需的参数怎么传递到 `debug-db`?
 
-答案: 借助 android 的 resource overlay, 只需在两个gradle文件里配置参数即可, 具体如下代码
+答案: 借助 android 的 resource overlay, 只需在两个gradle文件里配置参数即可.
+但这个只能在编译阶段生效, 在运行时无法使用这种方式传递参数(如需要从远程服务器获取本地数据库密钥, 然后作为库的配置参数传递进去). 
+具体如下代码
 
 - debug-db's build.gradle
 
@@ -198,7 +200,7 @@ android {
 
 ```
 
-> 存在多个依赖库, 并且这些依赖库有顺序关系?
+### 问题二: 存在多个依赖库, 并且这些依赖库有顺序关系?
 
 答案: 无法解决这个问题, ContentProvider 与  ContentProvider 被创建的时机是无序的, 并不会因为在 AndroidManifest.xml 的位置靠向而先创建.
 
