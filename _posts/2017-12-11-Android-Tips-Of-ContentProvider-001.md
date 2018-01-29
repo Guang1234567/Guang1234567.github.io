@@ -130,7 +130,7 @@ public class DebugDBInitProvider extends ContentProvider {
 ```
 
 
-- 在 `debug-db's AndroidManifest.xml` 声明 `DemoApplication`
+- 在 `debug-db's AndroidManifest.xml` 声明 `DebugDBInitProvider`
 
 ```xml
 
@@ -167,7 +167,7 @@ dependencies {
 ### 问题一: 配置所需的参数怎么传递到 `debug-db`?
 
 答案: 借助 android 的 resource overlay, 只需在两个gradle文件里配置参数即可.
-但这个只能在编译阶段生效, 在运行时无法使用这种方式传递参数(如需要从远程服务器获取本地数据库密钥, 然后作为库的配置参数传递进去). 
+但这个只能在编译阶段生效, 在运行时无法使用这种方式传递参数(如需要从远程服务器获取本地数据库密钥, 然后作为库的配置参数传递进去).
 具体如下代码
 
 - debug-db's build.gradle
