@@ -116,6 +116,9 @@ OSI中的层 | 功能                                                           
 
 **HTTP**是一种 **应用层协议**(看上面的表格).
 
+HTTP（HyperText Transfer Protocol)超文本传输协议是互联网上应用最为广泛的一种网络协议。
+由于信息是明文传输，所以被认为是不安全的。
+
 用来干什么? 看 **OSI** 截图(最顶的三层)
 
 
@@ -129,9 +132,73 @@ OSI中的层 | 功能                                                           
 
 ### SSL/TLS 协议
 
-**UDP** 是一种 **传输层协议**.
+**SSL/TLS** 是一种 **传输层协议**.
 
 SSL(Secure Sockets Layer 安全套接层),及其继任者传输层安全（Transport Layer Security，TLS）是为网络通信提供安全及数据完整性的一种安全协议。TLS与SSL在传输层对网络连接进行加密。
+
+#### SSL/TLS的历史
+
+互联网加密通信协议的历史，几乎与互联网一样长。
+
+        1994年，NetScape公司设计了SSL协议（Secure Sockets Layer）的1.0版，但是未发布。
+        1995年，NetScape公司发布SSL 2.0版，很快发现有严重漏洞。
+        1996年，SSL 3.0版问世，得到大规模应用。
+        1999年，互联网标准化组织ISOC接替NetScape公司，发布了SSL的升级版TLS 1.0版。
+        2006年和2008年，TLS进行了两次升级，分别为TLS 1.1版和TLS 1.2版。最新的变动是2011年TLS 1.2的修订版。
+        目前，应用最广泛的是TLS 1.0，接下来是SSL 3.0。但是，主流浏览器都已经实现了TLS 1.2的支持。
+
+TLS 1.0通常被标示为SSL 3.1，TLS 1.1为SSL 3.2，TLS 1.2为SSL 3.3。
+
+
+#### 代码举例:
+
+Android 的 Okhttp 是一个支持 https 的客户端实现. 
+另外下面的代码是极其不严谨的(因为验证逻辑一点都没写), 请勿直接copy用于工作环境.
+
+```java
+    /**
+     * 创建使用 SSL 协议的 http client.
+     */
+    public static OkHttpClient cloneOkHttpsClient() {
+        // 创建使用 SSL 协议的 http client.
+        SSLContext sslContext = null;
+        try {
+            sslContext = SSLContext.getInstance("TLS"); // <------ here
+            X509TrustManager tm = new X509TrustManager() {
+                public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+                }
+
+                public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+                }
+
+                public X509Certificate[] getAcceptedIssuers() {
+                    return new X509Certificate[0];
+                }
+            };
+            sslContext.init(null, new TrustManager[]{tm}, null);
+        } catch (Exception e) {
+            Logger.e(LOG_TAG, "#cloneOkHttpsClient : ", e);
+        }
+
+        HostnameVerifier hostnameVerifier = new HostnameVerifier() {
+            @Override
+            public boolean verify(String hostname, SSLSession session) {
+                return true;
+            }
+        };
+
+        OkHttpClient clone = getOkHttpClient().newBuilder()
+                .sslSocketFactory(sslContext.getSocketFactory())
+                .hostnameVerifier(hostnameVerifier)
+                .build();
+        return clone;
+    }
+```
+
+- https://baike.baidu.com/item/ssl/320778
+- https://baike.baidu.com/item/TLS/2979545?fr=aladdin
+- http://www.cnblogs.com/zhuqil/archive/2012/10/06/ssl_detail.html
+- http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html
 
 ### IP 协议
 
@@ -145,8 +212,87 @@ SSL(Secure Sockets Layer 安全套接层),及其继任者传输层安全（Trans
 ### 常挂在嘴边的 Https 协议是? 
 
     网络层(用IP协议) + 传输层(用SSL/TLS协议) + 应用层(用 Http 协议) 的一种组合结构...(真相总是残酷的 ε(┬┬﹏┬┬)3 )
+    
+    
+### 嘴边的 Https VS http
+
+常说 Https 比 Http 安全, 是因为 Https 传输层所用的协议是 **SSL/TLS**, 数据是被加密的.
 
 
+### CA证书是什么？
+
+CA（Certificate Authority）是负责管理和签发证书的第三方权威机构，是所有行业和公众都信任的、认可的。
+
+CA证书，就是CA颁发的证书，可用于验证网站是否可信（针对HTTPS）、验证某文件是否可信（是否被篡改）等，也可以用一个证书来证明另一个证书是真实可信，最顶级的证书称为根证书。除了根证书（自己证明自己是可靠），其它证书都要依靠上一级的证书，来证明自己。
+
+> 补充: CA 是要收取服务费用的, 因为它会提供**证书认证服务器**来供客户端验证证书的合法性.
 
 
+## HTTP三次握手
 
+HTTP（HyperText Transfer Protocol)超文本传输协议是互联网上应用最为广泛的一种网络协议。由于信息是明文传输，所以被认为是不安全的。而关于HTTP的三次握手，其实就是使用三次TCP握手确认建立一个HTTP连接。
+
+如下图所示，SYN（synchronous）是TCP/IP建立连接时使用的握手信号、Sequence number（序列号）、Acknowledge number（确认号码），三个箭头指向就代表三次握手，完成三次握手，客户端与服务器开始传送数据。
+
+![]({{ "/img/in-post/2018-04-03-handshake-of-https/555379-20160210231251448-1547962527.jpg" | prepend: site.baseurl }})
+
+第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认；
+
+第二次握手：服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（syn=k），即SYN+ACK包，此时服务器进入SYN_RECV状态；
+
+第三次握手：客户端收到服务器的SYN＋ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手。
+
+## HTTPS握手
+
+摘抄至 http://www.cnblogs.com/zhuqil/archive/2012/07/23/2604572.html
+
+HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。具体是如何进行加密，解密，验证的，且看下图。
+
+![]({{ "/img/in-post/2018-04-03-handshake-of-https/2012072310244445.png" | prepend: site.baseurl }})
+
+- 1 客户端发起HTTPS请求
+
+这个没什么好说的，就是用户在浏览器里输入一个https网址，然后连接到server的443端口。
+
+> 补充:
+>
+>把客户端所支持的 SSL(TLS) 的最高版本也发给服务器
+
+- 2 服务端的配置
+
+采用HTTPS协议的服务器必须要有一套数字证书，可以自己制作，也可以向组织申请。区别就是自己颁发的证书需要客户端验证通过，才可以继续访问，而使用受信任的公司申请的证书则不会弹出提示页面(startssl就是个不错的选择，有1年的免费服务)。这套证书其实就是一对公钥和私钥。如果对公钥和私钥不太理解，可以想象成一把钥匙和一个锁头，只是全世界只有你一个人有这把钥匙，你可以把锁头给别人，别人可以用这个锁把重要的东西锁起来，然后发给你，因为只有你一个人有这把钥匙，所以只有你才能看到被这把锁锁起来的东西。
+
+- 3 传送证书
+
+这个证书其实就是公钥，只是包含了很多信息，如证书的颁发机构，过期时间等等。
+
+- 4 客户端解析证书
+
+这部分工作是有客户端的TLS来完成的，首先会验证公钥是否有效，比如颁发机构，过期时间等等，如果发现异常，则会弹出一个警告框，提示证书存在问题。如果证书没有问题，那么就生成一个随机值(Password)。然后用证书对该随机值进行加密。就好像上面说的，把随机值用锁头锁起来，这样除非有钥匙，不然看不到被锁住的内容。
+
+> 补充: 
+>
+> 如果证书是由CA签发的话, 客户端还要去CA证书服务器验证证书的合法性.
+>
+> 如果证书是自己制作的话, 客户端需要导入跟服务器一模一样的证书, 来跟服务器传输过来的证书做对比验证.
+
+- 5 传送加密信息
+
+这部分传送的是用证书加密后的随机值，目的就是让服务端得到这个随机值，以后客户端和服务端的通信就可以通过这个随机值来进行加密解密了。
+
+- 6 服务段解密信息
+
+服务端用私钥解密后，得到了客户端传过来的随机值(Password)，然后把内容通过该值进行对称加密。所谓对称加密就是，将信息和随机值(Password)通过某种算法混合在一起，这样除非知道随机值(Password)，不然无法获取内容，而正好客户端和服务端都知道这个随机值(Password)，所以只要加密算法够彪悍，私钥够复杂，数据就够安全。
+
+- 7 传输加密后的信息
+
+这部分信息是服务段用随机值(Password)加密后的信息，可以在客户端被还原
+
+- 8 客户端解密信息
+
+客户端用之前生成的随机值(Password)解密服务段传过来的信息，于是获取了解密后的内容。整个过程第三方即使监听到了数据，也束手无策。
+
+
+## 参考
+
+https://www.cnblogs.com/qishui/p/5428938.html
