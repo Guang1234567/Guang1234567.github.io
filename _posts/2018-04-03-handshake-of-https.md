@@ -211,7 +211,7 @@ Android 的 Okhttp 是一个支持 https 的客户端实现.
     
 ### 常挂在嘴边的 Https 协议是? 
 
-    网络层(用IP协议) + 传输层(用SSL/TLS协议) + 应用层(用 Http 协议) 的一种组合结构...(真相总是残酷的 ε(┬┬﹏┬┬)3 )
+    网络层(用IP协议) + 传输层(用TCP协议) + 传输层(用SSL or TLS协议) + 应用层(用 Http 协议) 的一种组合结构...(真相总是残酷的 ε(┬┬﹏┬┬)3 )
     
     
 ### 嘴边的 Https VS http
@@ -235,6 +235,8 @@ HTTP（HyperText Transfer Protocol)超文本传输协议是互联网上应用最
 如下图所示，SYN（synchronous）是TCP/IP建立连接时使用的握手信号、Sequence number（序列号）、Acknowledge number（确认号码），三个箭头指向就代表三次握手，完成三次握手，客户端与服务器开始传送数据。
 
 ![]({{ "/img/in-post/2018-04-03-handshake-of-https/555379-20160210231251448-1547962527.jpg" | prepend: site.baseurl }})
+
+![]({{ "/img/in-post/2018-04-03-handshake-of-https/http_hand_shake_pkg.png" | prepend: site.baseurl }})
 
 第一次握手：客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认；
 
