@@ -92,7 +92,7 @@ class DemoController() {
         .observeOn(Schedulers.io(), false, 1) // 指定缓冲区大小为 1 个元素
         .doOnComplete { println("Complete") }
         .subscribe { x ->
-            Thread.sleep(500) // 处理每个元素消耗 500 毫秒
+            Thread.sleep(5000) // 处理每个元素消耗 5000 毫秒
             println("Processed $x")
         }
     }
@@ -118,7 +118,7 @@ class DemoController() {
 13:30:10.405  Processed 7
 ```
 
-这段代码有两个主角 `生产者` 和 `消费者`, 其中 `消费者` 的消费速度 比`生产者`的生产速度慢, 特意用了 `Thread.sleep(500)` 来模拟这一场景.
+这段代码有两个主角 `生产者` 和 `消费者`, 其中 `消费者` 的消费速度 比`生产者`的生产速度慢, 特意用了 `Thread.sleep(5000)` 来模拟这一场景.
 
  当 `消费者协程` (处于 IO 线程) 消费不过来的时候,   `生产者协程` (处于 Main 线程) 会被自动 suspend (挂起), 也就是 **"暂停"** 生产 (不是 **"停止"** 哦).  当`消费者协程`消化过来后,  `生产者协程` **"恢复"** 生产.
  
@@ -344,7 +344,7 @@ private class Rx2PublisherCoroutine<E>(val subscriber: Subscriber<E>, context: C
 
                 //  前一个 onNext 调用完毕后(前一个事件被消费了), 会调用 request 申请生产下一个事件, 这是 rxjava 方面的知识点.
                 override fun request(n: Long) {
-                   // 当前生产的东西经过 500 毫秒的时长被消化掉了 (还记得 Thread.sleep(500) 吗?)
+                   // 当前生产的东西经过 5000 毫秒的时长被消化掉了 (还记得 Thread.sleep(5000) 吗?)
                    // 接着 unlock 当前协程从而进行下一轮生产
                     mutex.unlock()
                 }
@@ -447,7 +447,7 @@ fun CoroutineDispatcher.asScheduler(): Scheduler {
         .observeOn(Dispatchers.IO.asScheduler(), false, 1) // 指定缓冲区大小为 1 个元素
         .doOnComplete { println("Complete") }
         .subscribe { x ->
-            Thread.sleep(500) // 处理每个元素消耗 500 毫秒
+            Thread.sleep(5000) // 处理每个元素消耗 5000 毫秒
             println("Processed $x")
         }
     }
