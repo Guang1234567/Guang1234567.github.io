@@ -28,3 +28,5 @@ tags:
 [Rust 与 Android 之重定向 stdout stderr 到 logcat](https://guang1234567.github.io/dotenv/.env/2019/11/27/Rust_With_Android_stdout_stderr_logcat/)
 
 [Rust 与 Android 之断点调试](https://guang1234567.github.io/2019/11/27/Rust_With_Android_breakingpoint/)
+
+[Rust 与 Android 之 sqlite3 and ORM](https://guang1234567.github.io/2019/11/27/Rust_With_Android_sqlite_and_orm/)
