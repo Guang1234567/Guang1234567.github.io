@@ -60,7 +60,7 @@ tags:
 
 ### gdb
 
-- 第一步: 已 debug 模式启动例子 app
+- 第一步: 以 debug 模式启动例子 app
 
 ```bash
 adb shell am start -n "com.rust.example.android.debug/com.rust.example.android.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -D
@@ -107,7 +107,7 @@ cd  lldb/bin
 
 ### lldb
 
-- 第一步: 已 debug 模式启动例子 app
+- 第一步: 以 debug 模式启动例子 app
 
 ```bash
 adb shell am start -n "com.rust.example.android.debug/com.rust.example.android.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -D
