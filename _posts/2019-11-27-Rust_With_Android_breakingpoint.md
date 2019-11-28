@@ -81,8 +81,7 @@ cd  lldb/bin
 
 - 第三步:  配置 CLion的 `gdb remote debug`
 
-![配置 CLion的 `gdb remote debug`](https://raw.githubusercontent.com/Guang1234567/rust_android_common_lib/master/lldb/bin/clion_remote_debug_cfg_ gdb.png)
-
+![]({{ "/img/in-post/2019-11-27-Rust_With_Android_breakingpoint/clion_remote_debug_cfg_gdb.png" | prepend: site.baseurl }})
 
 - 第四步:  运行第三步的配置, 直到 Clion 的 "debug panel" 显示 "Connected" 之类的字样,  不是 "Connecting" !   "Connecting" 的话请耐心等待!
 
@@ -104,7 +103,7 @@ cd  lldb/bin
 
 最终效果图:
 
-![](https://raw.githubusercontent.com/Guang1234567/rust_android_common_lib/master/lldb/bin/clion_remote_debug_gdb_final.png)
+![]({{ "/img/in-post/2019-11-27-Rust_With_Android_breakingpoint/clion_remote_debug_gdb_final.png" | prepend: site.baseurl }})
 
 ### lldb
 
@@ -131,10 +130,11 @@ cd  lldb/bin
 
 配置 CLion的 `android native debug`
 
-![配置 CLion的 `android native debug`](https://raw.githubusercontent.com/Guang1234567/rust_android_common_lib/master/lldb/bin/clion_remote_debug_cfg_lldb.png)
+![]({{ "/img/in-post/2019-11-27-Rust_With_Android_breakingpoint/clion_remote_debug_cfg_lldb.png" | prepend: site.baseurl }})
 
 
 > unix-abstract-connect:///com.rust.example.android.debug-0/platform-debug.sock
+> 
 >  不用手打这句
 
 - 第四步:  运行第三步的配置, 直到 Clion 的 "debug panel" 显示 "Connected" 之类的字样,  不是 "Connecting" !   "Connecting" 的话请耐心等待!
