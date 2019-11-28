@@ -147,7 +147,7 @@ impl SqliteHelper {
 **缺点**
 
 - 随着业务的开展, 数据库的升级是必须的,  但 `rusqlite` 不提供升级数据库的接口, 需要额外写代码来升级.
-- so 的体积变大, 因为把 sqlite3 编译进去了, 没有共用 android os 里的 `libsqlite3.so`  .
+- so 的体积变大, 因为把 sqlite3 静态编译进去了, 没有共用 android os 里的 `libsqlite3.so`  .
 - ...
 
 
